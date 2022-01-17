@@ -1,11 +1,26 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+const who = ["The dog", "My grandma", "His toad", "My cat"];
+const action = ["ate", "peed", "poop", "destroy"];
+const what = ["my cup of coffe", "the bike", "the wall"];
+const when = [
+  "before dinner",
+  "right on time",
+  "when I finished",
+  "during my class",
+  "while I was reading"
+];
+const data = [who, action, what, when];
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+const RandomIndex = arr => Math.floor(Math.random() * arr.length);
+const RandomItem = (arr, i) => arr[i];
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
+//RandomItem(action, RandomIndex(action)); ----> para test
+
+const generateExcuse = dataArr => {
+  let excuse = "";
+  for (let v of dataArr) {
+    excuse += `${RandomItem(v, RandomIndex(v))} `;
+  }
+  return excuse;
 };
+
+console.log(generateExcuse(data));
