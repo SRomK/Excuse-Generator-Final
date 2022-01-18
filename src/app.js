@@ -24,3 +24,8 @@ const generateExcuse = dataArr => {
 };
 
 console.log(generateExcuse(data));
+
+window.onload = function() {
+  const excuseDom = document.querySelector("#excuse");
+  excuseDom.innerHTML = generateExcuse(data);
+};
